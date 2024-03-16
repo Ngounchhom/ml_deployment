@@ -1,0 +1,5 @@
+flask
+flask_expects_json
+scikit-learn
+jsonpickle
+pandas

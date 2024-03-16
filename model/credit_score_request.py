@@ -1,0 +1,11 @@
+class CreditScoreRequest():
+    Month: float
+    Age: int
+    Occupation: str
+    Annual_Income: float
+    Monthly_Inhand_Salary: float
+    Num_Credit_Card: float
+    Num_Bank_Accounts: float
+    Interest_Rate: float
+    Num_of_Loan: float
+    Credit_History_Age: float
