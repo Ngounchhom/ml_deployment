@@ -1,17 +1,12 @@
 import json
 import pickle
 import pandas as pd
-from sklearn.neighbors import KNeighborsClassifier
 from model.credit_score_request import CreditScoreRequest
-from model.object_response import ObjectResponse, Response
-from flask import jsonify
-import jsonpickle
 
 class CreditScoreService():
     def __init__(self):
         self.dfCol = ['Month','Age','Occupation','Annual_Income','Monthly_Inhand_Salary', 'Num_Bank_Accounts', 'Num_Credit_Card', 'Interest_Rate','Num_of_Loan', 'Credit_History_Age']
     def prediction(self, creditScoreRequest: CreditScoreRequest):
-        print('Service', creditScoreRequest)
         data = {
             'Month': creditScoreRequest['month'],
             'Age': creditScoreRequest['age'],
@@ -24,7 +19,6 @@ class CreditScoreService():
             'Num_of_Loan': creditScoreRequest['numOfLoan'],
             'Credit_History_Age': creditScoreRequest['creditHistoryAge']
         }
-
         dataFrame = pd.DataFrame(data, index=[0])
         import os
         filepath = '\ml-model\credit_score.pkl'
